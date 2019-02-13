@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>DevOps Dashboard</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link href="css/process-status.css" rel="stylesheet">
+
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Tools</div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action bg-light">Source Control Management</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Continuous Integration</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Static Code Analysis</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Repository Manager</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Monitoring</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Data Visualization</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Other Tools</a>
+
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">DevOps Platform</span>
+        <button class="btn btn-secondary" id="menu-toggle"><i class="fa fa-cog"></i> Edit</button>
+      </nav>
+
+      <div class="container-fluid" style="padding: 0!important">
+        <!-- Header/Jumbotron -->
+        <div class="jumbotron jumbotron-fluid jumbotron-colored">
+          <div class="container jumbotron-title-container">
+            <h1 class="display-4">ATCP DevOps Dashboard</h1>
+            <p class="lead">This dynamic platform can be used for demos, training and to start real projects.</p>
+          </div>
+        </div>
+        <!-- /#header-jumbotron-wrapper -->
+        <!-- Main Panels -->
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-7">
+                <!-- Process Status Row-->
+                <div class="row">
+                  <!-- Success Box -->
+                  <div class="col-sm-4 success" id="messagebox" >
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="row row-app-icon-container">
+                                <div class="row-app-icon">
+                                  <img src="https://about.gitlab.com/images/logos/wm_web.svg" class="process-status-app-icon" alt="Responsive image">
+                                </div>
+                              </div>
+                              <div class="row h6 p-2" id="messagebox-header"><small>Git Repository Management and Code Review Tool</small></div>
+                              <div class="row p-2 text-black-50">
+                                  <div class="col-md-4 font-weight-light">
+                                      <small>Start</small>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <small>Stop</small>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <small>Logs</small>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Success Box -->
+                  <div class="col-sm-4 success" id="messagebox" >
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="row row-app-icon-container">
+                                <div class="row-app-icon">
+                                  <img src="images/jenkins.png" class="process-status-app-icon" alt="Responsive image">
+                                </div>
+                              </div>
+                              <div class="row h6 p-2" id="messagebox-header"><small>Continuous Integration and Automation Server</small></div>
+                              <div class="row p-2 text-black-50">
+                                  <div class="col-md-4 font-weight-light">
+                                      <small>Start</small>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <small>Stop</small>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <small>Logs</small>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Success Box -->
+                  <div class="col-sm-4 warning" id="messagebox" >
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="row row-app-icon-container">
+                                <div class="row-app-icon">
+                                  <img src="images/sonar.png" class="process-status-app-icon" alt="Responsive image">
+                                </div>
+                              </div>
+                              <div class="row h6 p-2" id="messagebox-header"><small>Static Code Analysis<br /><br /></small></div>
+                              <div class="row p-2 text-black-50">
+                                  <div class="col-md-4 font-weight-light">
+                                      <small>Start</small>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <small>Stop</small>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <small>Logs</small>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <!-- Process Status Row-->
+                <div class="row">
+                    <!-- Success Box -->
+                    <div class="col-sm-4 success" id="messagebox" >
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row row-app-icon-container">
+                                  <div class="row-app-icon">
+                                    <img src="https://about.gitlab.com/images/logos/wm_web.svg" class="process-status-app-icon" alt="Responsive image">
+                                  </div>
+                                </div>
+                                <div class="row h6 p-2" id="messagebox-header"><small>Git Repository Management and Code Review Tool</small></div>
+                                <div class="row p-2 text-black-50">
+                                    <div class="col-md-4 font-weight-light">
+                                        <small>Start</small>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <small>Stop</small>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <small>Logs</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Success Box -->
+                    <div class="col-sm-4 success" id="messagebox" >
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row row-app-icon-container">
+                                  <div class="row-app-icon">
+                                    <img src="images/jenkins.png" class="process-status-app-icon" alt="Responsive image">
+                                  </div>
+                                </div>
+                                <div class="row h6 p-2" id="messagebox-header"><small>Continuous Integration and Automation Server</small></div>
+                                <div class="row p-2 text-black-50">
+                                    <div class="col-md-4 font-weight-light">
+                                        <small>Start</small>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <small>Stop</small>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <small>Logs</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Success Box -->
+                    <div class="col-sm-4 warning" id="messagebox" >
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row row-app-icon-container">
+                                  <div class="row-app-icon">
+                                    <img src="images/sonar.png" class="process-status-app-icon" alt="Responsive image">
+                                  </div>
+                                </div>
+                                <div class="row h6 p-2" id="messagebox-header"><small>Static Code Analysis<br /><br /></small></div>
+                                <div class="row p-2 text-black-50">
+                                    <div class="col-md-4 font-weight-light">
+                                        <small>Start</small>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <small>Stop</small>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <small>Logs</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="card">
+                  <h5 class="card-header">Containers List</h5>
+                  <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+                <br />
+                <div class="card">
+                    <h5 class="card-header">Containers Logs</h5>
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <!-- /#main-panels-wrapper -->
+      </div>
+
+    </div>
+
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>
