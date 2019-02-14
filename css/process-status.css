@@ -10,6 +10,8 @@
     min-height: 100px;
     color: #4B515D;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    border-radius: 0px;
+    background-color: white;
 }
 
 #messagebox.success{
@@ -39,8 +41,12 @@
 }
 
 #messagebox-header{
-    padding-left: 0.6em;
+    margin-left: 1%!important;
+    margin-right: 1%!important;
     margin-bottom: 0px;
+    min-height: 61px!important;
+    border-top: solid 1px lightgray;
+
 }
 
 #expanded-status{
@@ -49,27 +55,103 @@
 
 .jumbotron {
     max-height: 100%!important;
-    padding: 2rem 2rem!important;
+    padding: 1rem 2rem!important;
+}
+
+.row-padding-15 {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+
+.row-padding-left-15 {
+    padding-left: 15px!important;
 }
 
 .row-app-icon-container {
-    border-bottom: solid 1px lightgray;
-    height: 50px;
+    
+    height: 40px;
 }
 
-    .row-app-icon {
-        height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-    }
+.row-app-icon {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    .process-status-app-icon {
-        height: 80%;
-    }
+.process-status-app-icon {
+    height: 80%;
+}
 
 
 .jumbotron-title-container {
     padding-top: 20px!important;
+    margin-left: 0px!important;
+    padding-left: 0px!important;
+    /* color: white!important; */
 }
+
+.tinted-image {
+    /* background: url(../images/Ambient_Pattern_10_Technology_RGB.png) center center no-repeat,
+    linear-gradient(60deg, rgba(0,163,13,1) 0%, rgba(0,250,4,1) 100%); */
+}
+
+
+.overflow-textarea {
+    overflow-x: scroll;
+    overflow-y: scroll;
+    white-space: nowrap
+}
+
+.monospace {
+    font-family: 'Lucida Console', Monaco, monospace!important;
+}
+
+.text-smaller {
+    font-size: 70%!important;
+}
+
+body {
+    background-color: rgb(245,245,245);
+}
+
+/* drag and drop */
+.box {
+
+    background-color: black;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
+  }
+  
+  .held {
+    border: solid 10px black;
+    background-color: black;
+  }
+  
+  .holder {
+    height: 110px;
+    width: 110px;
+    margin: 10px;
+    border: solid 5px black;
+    background-color: white;
+    display: inline-block;
+  }
+  
+  .hovered {
+    border: dotted 5px black;
+  }
+  
+  .invisible {
+    display: none;
+  }
+  
+  #container2 {
+    margin: auto;
+    top: 100px;
+    width: 400px;
+    position: relative;
+  }
