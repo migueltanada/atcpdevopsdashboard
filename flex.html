@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <meta content="" name="description">
+  <meta content="" name="author">
+  <title>DevOps Dashboard</title><!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"><!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link href="css/process-status.css" rel="stylesheet"><!-- Fontawesome -->
+  <link href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" rel="stylesheet">
+</head>
+<body>
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">
+        Tools <button class="btn btn-sm btn-light pull-right py-0" id="sidebar-toggle"><i class="fa fa-eye-slash"></i> Hide</button>
+      </div>
+      <div class="list-group list-group-flush">
+        <a class="list-group-item list-group-item-action bg-light" href="#">Source Control Management</a> <a class="list-group-item list-group-item-action bg-light" href="#">Continuous Integration</a> <a class="list-group-item list-group-item-action bg-light" href="#">Static Code Analysis</a> <a class="list-group-item list-group-item-action bg-light" href="#">Repository Manager</a> <a class="list-group-item list-group-item-action bg-light" href="#">Monitoring</a> <a class="list-group-item list-group-item-action bg-light" href="#">Data Visualization</a> <a class="list-group-item list-group-item-action bg-light" href="#">Other Tools</a>
+        <div class="holder"></div>
+      </div>
+    </div><!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <!-- Navbar -->
+      <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1 py-0">Test UI Page</span> <button class="btn btn-sm btn-secondary py-0" id="menu-toggle"><i class="fa fa-cog"></i> Edit</button>
+      </nav>
+      <div class="container-fluid" style="padding: 0!important">
+        <!-- Header/Jumbotron -->
+        <div class="jumbotron jumbotron-fluid tinted-image py-0">
+          <div class="container jumbotron-title-container py-0">
+            <!-- <h1 class="display-4">Title Here</h1> -->
+            <h1 class="py-0">Title Here</h1>
+            <p class="lead py-0">Subtitle here</p>
+          </div>
+        </div><!-- /#header-jumbotron-wrapper -->
+        <!-- Main Panels -->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-7">
+              <!-- Process Status Row-->
+              <div class="row row-padding-15">
+                <!-- Process Box -->
+                <div class="col-sm-4">
+                  <div class="success" id="messagebox">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="row row-app-icon-container">
+                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="images/download%20(2).png"></div>
+                        </div>
+                        <div class="row h6 p-2" id="messagebox-header">
+                          <small>Git Repository Management and Code Review</small>
+                        </div>
+                        <div class="row p-2 text-black-50 row-padding-left-15">
+                          <div class="col-md-4 font-weight-light">
+                            <small>Start</small>
+                          </div>
+                          <div class="col-md-4">
+                            <small>Stop</small>
+                          </div>
+                          <div class="col-md-4">
+                            <small>Logs</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- Process Box -->
+                <div class="col-sm-4">
+                  <div class="success" id="messagebox">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="row row-app-icon-container">
+                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="images/jenkins.png"></div>
+                        </div>
+                        <div class="row h6 p-2" id="messagebox-header">
+                          <small>CI and Automation Server</small>
+                        </div>
+                        <div class="row p-2 text-black-50 row-padding-left-15">
+                          <div class="col-md-4 font-weight-light">
+                            <small>Start</small>
+                          </div>
+                          <div class="col-md-4">
+                            <small>Stop</small>
+                          </div>
+                          <div class="col-md-4">
+                            <small>Logs</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- Process Box -->
+                <div class="col-sm-4 container2">
+                  <div class="success" draggable="true" id="messagebox">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="row row-app-icon-container">
+                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="images/sonar.png"></div>
+                        </div>
+                        <div class="row h6 p-2" id="messagebox-header">
+                          <small>Static Code Analysis<br>
+                          <br></small>
+                        </div>
+                        <div class="row p-2 text-black-50 row-padding-left-15">
+                          <div class="col-md-4 font-weight-light">
+                            <small>Start</small>
+                          </div>
+                          <div class="col-md-4">
+                            <small>Stop</small>
+                          </div>
+                          <div class="col-md-4">
+                            <small>Logs</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- Process Status Row-->
+              <div class="row row-padding-15">
+                <!-- Process Box -->
+                <div class="col-sm-4">
+                  <div class="success" id="messagebox">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="row row-app-icon-container">
+                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="images/download%20(2).png"></div>
+                        </div>
+                        <div class="row h6 p-2" id="messagebox-header">
+                          <small>Git Repository Management and Code Review</small>
+                        </div>
+                        <div class="row p-2 text-black-50 row-padding-left-15">
+                          <div class="col-md-4 font-weight-light">
+                            <small>Start</small>
+                          </div>
+                          <div class="col-md-4">
+                            <small>Stop</small>
+                          </div>
+                          <div class="col-md-4">
+                            <small>Logs</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- Process Box -->
+                <div class="col-sm-4">
+                  <div class="warning" id="messagebox">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="row row-app-icon-container">
+                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="images/jenkins.png"></div>
+                        </div>
+                        <div class="row h6 p-2" id="messagebox-header">
+                          <small>Continuous Integration and Automation Server</small>
+                        </div>
+                        <div class="row p-2 text-black-50 row-padding-left-15">
+                          <div class="col-md-4 font-weight-light">
+                            <small>Start</small>
+                          </div>
+                          <div class="col-md-4">
+                            <small>Stop</small>
+                          </div>
+                          <div class="col-md-4">
+                            <small>Logs</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- Process Box -->
+                <div class="col-sm-4">
+                  <div class="success" id="messagebox">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="row row-app-icon-container">
+                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="images/sonar.png"></div>
+                        </div>
+                        <div class="row h6 p-2" id="messagebox-header">
+                          <small>Static Code Analysis<br>
+                          <br></small>
+                        </div>
+                        <div class="row p-2 text-black-50 row-padding-left-15">
+                          <div class="col-md-4 font-weight-light">
+                            <small>Start</small>
+                          </div>
+                          <div class="col-md-4">
+                            <small>Stop</small>
+                          </div>
+                          <div class="col-md-4">
+                            <small>Logs</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- Process Status Row-->
+              <div class="row row-padding-15">
+                <!-- Process Box -->
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="card">
+                <!-- <h5 class="card-header">Console</h5> -->
+                <div class="card-body py-2 px-3">
+                  <div class="form-group">
+                    <label class="text-small" for="containerList">Containers List</label> 
+                    <textarea class="form-control bg-dark monospace text-white text-smaller overflow-textarea" id="containerList" placeholder="Logs" readonly rows="10">CONTAINER ID        IMAGE                        COMMAND                CREATED              STATUS              PORTS               NAMES
+                        4c01db0b339c        ubuntu:12.04                 bash                   17 seconds ago       Up 16 seconds       3300-3310/tcp       webapp
+                        d7886598dbe2        crosbymichael/redis:latest   /redis-server --dir    33 minutes ago       Up 33 minutes       6379/tcp            redis,webapp/db</textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="containerLogs">Containers Logs</label> 
+                    <textarea class="form-control bg-dark monospace text-white text-smaller overflow-textarea" id="containerLogs" readonly rows="10"></textarea>
+                  </div>
+                </div>
+              </div><br>
+            </div>
+          </div>
+        </div><!-- /#main-panels-wrapper -->
+      </div>
+    </div><!-- /#page-content-wrapper -->
+  </div><!-- /#wrapper -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js">
+  </script> 
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+  </script> <!-- Menu Toggle Script -->
+
+  <script>
+$("#menu-toggle").click(function(e) {
+  e.preventDefault();
+  $("#wrapper").toggleClass("toggled");
+});
+$("#sidebar-toggle").click(function(e) {
+  e.preventDefault();
+  $("#wrapper").toggleClass("toggled");
+});
+/* drag and drop */
+class App {
+  static init() {
+    App.box = document.getElementsByClassName('box')[0]
+    App.box.addEventListener("dragstart", App.dragstart)
+    App.box.addEventListener("dragend", App.dragend)
+    const containers = document.getElementsByClassName('holder')
+    for (const container of containers) {
+      container.addEventListener("dragover", App.dragover)
+      container.addEventListener("dragenter", App.dragenter)
+      container.addEventListener("dragleave", App.dragleave)
+      container.addEventListener("drop", App.drop)
+    }
+  }
+  static dragstart() {
+    this.className += " held"
+    setTimeout(() => this.className = "invisible", 0)
+  }
+  static dragend() {
+    this.className = "box"
+  }
+  static dragover(e) {
+    e.preventDefault()
+  }
+  static dragenter(e) {
+    e.preventDefault()
+    this.className += " hovered"
+  }
+  static dragleave() {
+    this.className = "holder"
+  }
+  static drop() {
+    this.className = "holder"
+    this.append(App.box)
+  }
+}
+document.addEventListener("DOMContentLoaded", App.init)
+  </script>
+</body>
+</html>
