@@ -14,8 +14,13 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/simple-sidebar.css" rel="stylesheet">
-  <link href="css/process-status.css" rel="stylesheet">
+  <link href="css/sidebar.css" rel="stylesheet">
+  <link href="css/tools-status.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+  <link href="css/draganddrop.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet" />
+
 
   <!-- Fontawesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -29,20 +34,20 @@
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">
+      <div class="sidebar-heading py-2">
         Tools
-        <button class="btn btn-sm btn-light pull-right py-0" id="sidebar-toggle"><i class="fa fa-eye-slash"></i> Hide</button>
+        <button class="btn btn-sm btn-light pull-right" id="sidebar-toggle"><i class="fa fa-eye-slash"></i> Hide</button>
       </div>
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item list-group-item-action bg-light">Source Control Management</a>
+          
         <a href="#" class="list-group-item list-group-item-action bg-light">Continuous Integration</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Static Code Analysis</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Repository Manager</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Monitoring</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Data Visualization</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Other Tools</a>
-        <div class="holder"></div>
-
+        <!-- <div class="holder"></div> -->
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -52,7 +57,7 @@
 
       <!-- Navbar -->
       <nav class="navbar navbar-dark bg-dark">
-        <span class="navbar-brand mb-0 h1 py-0">Test UI Page</span>
+        <span class="navbar-brand mb-0 h1 py-0">Dashboard</span>
         <button class="btn btn-sm btn-secondary py-0" id="menu-toggle"><i class="fa fa-cog"></i> Edit</button>
       </nav>
 
@@ -61,7 +66,7 @@
         <div class="jumbotron jumbotron-fluid tinted-image py-0">
           <div class="container jumbotron-title-container py-0">
             <!-- <h1 class="display-4">Title Here</h1> -->
-            <h1 class="py-0">Title Here</h1>
+            <h1 class="py-0">Dashboard</h1>
             <p class="lead py-0">Subtitle here</p>
           </div>
         </div>
@@ -83,16 +88,17 @@
                               </div>
                             </div>
                             <div class="row h6 p-2" id="messagebox-header"><small>Git Repository Management and Code Review</small></div>
-                            <div class="row p-2 text-black-50  row-padding-left-15"">
-                              <div class="col-md-4 font-weight-light">
-                                  <small>Start</small>
+                            <div class="row p-2">
+                            	<div class="btn-group mx-auto" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-light btn-sm">Start</button>
+                                <button type="button" class="btn btn-light btn-sm">Stop</button>
+                                <button type="button" class="btn btn-light btn-sm">Logs</button>
                               </div>
-                              <div class="col-md-4">
-                                  <small>Stop</small>
-                              </div>
-                              <div class="col-md-4">
-                                  <small>Logs</small>
-                              </div>
+                              <!-- <div class="btn-group mx-auto" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-light btn-sm"><i class="fa fa-play"></i></button>
+                                <button type="button" class="btn btn-light btn-sm"><i class="fa fa-stop"></i></button>
+                                <button type="button" class="btn btn-light btn-sm"><i class="fa fa-list"></i></button>
+                              </div> -->
                             </div>
                         </div>
                       </div>
@@ -109,15 +115,11 @@
                               </div>
                             </div>
                             <div class="row h6 p-2" id="messagebox-header"><small>CI and Automation Server</small></div>
-                            <div class="row p-2 text-black-50  row-padding-left-15"">
-                              <div class="col-md-4 font-weight-light">
-                                  <small>Start</small>
-                              </div>
-                              <div class="col-md-4">
-                                  <small>Stop</small>
-                              </div>
-                              <div class="col-md-4">
-                                  <small>Logs</small>
+                            <div class="row p-2">
+                              <div class="btn-group mx-auto" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-light btn-sm">Start</button>
+                                <button type="button" class="btn btn-light btn-sm">Stop</button>
+                                <button type="button" class="btn btn-light btn-sm">Logs</button>
                               </div>
                             </div>
                         </div>
@@ -126,7 +128,7 @@
                   </div>
                   <!-- Process Box -->
                   <div class="col-sm-4 container2">
-                    <div class="success" id="messagebox" draggable="true">
+                    <div class="" id="messagebox">
                       <div class="row">
                         <div class="col-md-12">
                             <div class="row row-app-icon-container">
@@ -134,18 +136,20 @@
                                 <img src="images/sonar.png" class="process-status-app-icon" alt="Responsive image">
                               </div>
                             </div>
-                            <div class="row h6 p-2" id="messagebox-header"><small>Static Code Analysis<br /><br /></small></div>
-                            <div class="row p-2 text-black-50 row-padding-left-15">
-                              <div class="col-md-4 font-weight-light">
-                                  <small>Start</small>
-                              </div>
-                              <div class="col-md-4">
-                                  <small>Stop</small>
-                              </div>
-                              <div class="col-md-4">
-                                  <small>Logs</small>
-                              </div>
-                            </div>
+                            <form class="px-3" id="tool-params" data-simplebar>
+                                <div class="form-group">
+                                  <label for="sonar_jdbc_username"><small>JDBC Username</small></label>
+                                  <input type="email" class="form-control form-control-sm" id="sonar_jdbc_username" aria-describedby="" placeholder="sonar">
+                                </div>
+                                <div class="form-group">
+                                  <label for="sonar_jdbc_password"><small>JDBC Password</small></label>
+                                  <input type="password" class="form-control form-control-sm" id="sonar_jdbc_password" aria-describedby="" placeholder="" value="sonar">
+                                </div>
+                                <div class="form-group">
+                                    <label for="mysql_root_password"><small>MySQL Root Password</small></label>
+                                    <input type="password" class="form-control form-control-sm" id="mysql_root_password" aria-describedby="" placeholder="" value="sonar">
+                                </div>
+                            </form>
                         </div>
                       </div>
                     </div>
@@ -165,15 +169,11 @@
                             </div>
                             <div class="row h6 p-2" id="messagebox-header"><small>Git Repository Management and Code Review</small></div>
                             <div class="row p-2 text-black-50  row-padding-left-15"">
-                              <div class="col-md-4 font-weight-light">
-                                  <small>Start</small>
-                              </div>
-                              <div class="col-md-4">
-                                  <small>Stop</small>
-                              </div>
-                              <div class="col-md-4">
-                                  <small>Logs</small>
-                              </div>
+															<div class="btn-group mx-auto" role="group" aria-label="Basic example">
+																<button type="button" class="btn btn-light btn-sm">Start</button>
+																<button type="button" class="btn btn-light btn-sm">Stop</button>
+																<button type="button" class="btn btn-light btn-sm">Logs</button>
+															</div>
                             </div>
                         </div>
                       </div>
@@ -191,15 +191,11 @@
                             </div>
                             <div class="row h6 p-2" id="messagebox-header"><small>Continuous Integration and Automation Server</small></div>
                             <div class="row p-2 text-black-50 row-padding-left-15">
-                              <div class="col-md-4 font-weight-light">
-                                  <small>Start</small>
-                              </div>
-                              <div class="col-md-4">
-                                  <small>Stop</small>
-                              </div>
-                              <div class="col-md-4">
-                                  <small>Logs</small>
-                              </div>
+															<div class="btn-group mx-auto" role="group" aria-label="Basic example">
+																<button type="button" class="btn btn-light btn-sm">Start</button>
+																<button type="button" class="btn btn-light btn-sm">Stop</button>
+																<button type="button" class="btn btn-light btn-sm">Logs</button>
+															</div>
                             </div>
                         </div>
                       </div>
@@ -217,14 +213,10 @@
                             </div>
                             <div class="row h6 p-2" id="messagebox-header"><small>Static Code Analysis<br /><br /></small></div>
                             <div class="row p-2 text-black-50 row-padding-left-15">
-                              <div class="col-md-4 font-weight-light">
-                                  <small>Start</small>
-                              </div>
-                              <div class="col-md-4">
-                                  <small>Stop</small>
-                              </div>
-                              <div class="col-md-4">
-                                  <small>Logs</small>
+															<div class="btn-group mx-auto" role="group" aria-label="Basic example">
+																<button type="button" class="btn btn-light btn-sm">Start</button>
+																<button type="button" class="btn btn-light btn-sm">Stop</button>
+																<button type="button" class="btn btn-light btn-sm">Logs</button>
                               </div>
                             </div>
                         </div>
@@ -232,19 +224,30 @@
                     </div>
                   </div>
                 </div>
-                <!-- Process Status Row-->
-                <div class="row row-padding-15">
-                  <!-- Process Box -->
-
+                <!-- Toolbar Row -->
+                <div class="row row-padding-15 pull-right">
+                  <!-- Toolbar -->
+                  <button type="button" class="btn btn-primary btn-success" id="start_setup">Start</button>
+                </div>
+                <br /><br /><br />
+                <!-- Ansible Logs Row -->
+                <div class="col-md-12 px-0">
+                  <div class="card px-3 py-2 my-3">
+                    <div class="form-group">
+                        <label for="containerLogs">Ansible Logs</label>
+                        <textarea class="form-control bg-dark monospace text-white text-smaller overflow-textarea" id="ansibleLogs" rows="10" readonly></textarea>
+                    </div>
+                  </div>
                 </div>
               </div>
+
               <div class="col-lg-5">
                 <div class="card">
                   <!-- <h5 class="card-header">Console</h5> -->
                   <div class="card-body py-2 px-3">
                     <div class="form-group">
                       <label class="text-small" for="containerList">Containers List</label>
-                      <textarea class="form-control bg-dark monospace text-white text-smaller overflow-textarea" id="containerList" rows="10" placeholder="Logs" readonly>CONTAINER ID        IMAGE                        COMMAND                CREATED              STATUS              PORTS               NAMES
+                      <textarea class="form-control bg-dark monospace text-white text-smaller overflow-textarea" id="containerList" rows="10"  readonly>CONTAINERS ID        IMAGE              STATUS              PORTS               NAMES
                         4c01db0b339c        ubuntu:12.04                 bash                   17 seconds ago       Up 16 seconds       3300-3310/tcp       webapp
                         d7886598dbe2        crosbymichael/redis:latest   /redis-server --dir    33 minutes ago       Up 33 minutes       6379/tcp            redis,webapp/db
                       </textarea>
@@ -261,6 +264,50 @@
         </div>
         <!-- /#main-panels-wrapper -->
       </div>
+    
+      <div class="ui-widget ui-helper-clearfix">
+
+        <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
+          <li class="ui-widget-content ui-corner-tr">
+            <h5 class="ui-widget-header">High Tatras</h5>
+            <img src="images/high_tatras_min.jpg" alt="The peaks of High Tatras" width="96" height="72">
+            <a href="images/high_tatras.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
+            <a href="link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+          </li>
+          <li class="ui-widget-content ui-corner-tr">
+            <h5 class="ui-widget-header">High Tatras 2</h5>
+            <img src="images/high_tatras2_min.jpg" alt="The chalet at the Green mountain lake" width="96" height="72">
+            <a href="images/high_tatras2.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
+            <a href="link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+          </li>
+          <li class="ui-widget-content ui-corner-tr">
+            <p>GitLab</p>
+            <a href="images/high_tatras3.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
+            <a href="link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+          </li>
+          <li class="ui-widget-content ui-corner-tr">
+            <h5 class="ui-widget-header">High Tatras 4</h5>
+            <img src="images/high_tatras4_min.jpg" alt="On top of Kozi kopka" width="96" height="72">
+            <a href="images/high_tatras4.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
+            <a href="link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+          </li>
+          <li class="ui-widget-content ui-corner-tr">
+            <h5 class="ui-widget-header">High Tatras 4</h5>
+            <img src="images/high_tatras4_min.jpg" alt="On top of Kozi kopka" width="96" height="72">
+            <a href="images/high_tatras4.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
+            <a href="link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
+          </li>
+        </ul>
+  
+        <div id="trash" class="ui-widget-content ui-state-default">
+          <h4 class="ui-widget-header"><span class="ui-icon ui-icon-trash">Trash</span> Trash</h4>
+        </div>
+
+        <div id="trash" class="ui-widget-content ui-state-default">
+            <h4 class="ui-widget-header"><span class="ui-icon ui-icon-trash">Trash</span> Trash</h4>
+          </div>
+ 
+      </div>
 
     </div>
 
@@ -273,6 +320,15 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Third Party Scripts -->
+  <!-- Minimal Scroll Bars, use by adding data-simplebar inside an element with overflow -->
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>
+  <!-- jQueryUI for Drag and Drop -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <!-- Drag and Drop JS from jQueryUI -->
+  <script src="js/draganddrop.js"></script>
+  
+
   <!-- Menu Toggle Script -->
   <script>
     $("#menu-toggle").click(function(e) {
@@ -284,59 +340,6 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
-
-/* drag and drop */
-
-class App {
-
-static init() {
-
-  App.box = document.getElementsByClassName('box')[0]
-
-  App.box.addEventListener("dragstart", App.dragstart)
-  App.box.addEventListener("dragend", App.dragend)
-
-  const containers = document.getElementsByClassName('holder')
-
-  for(const container of containers) {
-    container.addEventListener("dragover", App.dragover)
-    container.addEventListener("dragenter", App.dragenter)
-    container.addEventListener("dragleave", App.dragleave)
-    container.addEventListener("drop", App.drop)
-  }
-}
-
-static dragstart() {
-  this.className += " held"
-
-  setTimeout(()=>this.className="invisible", 0)
-}
-
-static dragend() {
-  this.className = "box"
-}
-
-static dragover(e) {
-  e.preventDefault()
-}
-
-static dragenter(e) {
-  e.preventDefault()
-  this.className += " hovered"
-}
-
-static dragleave() {
-  this.className = "holder"
-}
-
-static drop() {
-  this.className = "holder"
-  this.append(App.box)
-}
-
-}
-
-document.addEventListener("DOMContentLoaded", App.init)
 
   </script>
 
