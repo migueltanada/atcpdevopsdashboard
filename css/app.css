@@ -3,13 +3,14 @@
     margin-left: 0px!important;
     padding-left: 0px!important;
     color: white!important;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    /* text-shadow: 2px 2px 10px rgba(0,0,0,0.5); */
 }
 
 .tinted-image {
-    background: url(../images/Ambient_Pattern_10_Technology_RGB.png) center center no-repeat,
-    linear-gradient(60deg, rgba(0,163,13,1) 0%, rgba(0,250,4,1) 100%);
-    /* background: linear-gradient(60deg, rgba(0,163,13,1) 0%, rgba(0,250,4,1) 100%); */
+    /* background: url(../images/Ambient_Pattern_2_Technology_RGB.png) center center no-repeat,
+    linear-gradient(60deg, rgba(0,140,13,1) 0%, rgba(0,250,4,1) 100%); */
+    background: linear-gradient(60deg, rgba(0,130,13,1) 0%, rgba(0,250,4,1) 100%);
+    background-size: 120%;
 }
 
 
@@ -28,6 +29,8 @@
 .text-smaller {
     font-size: 70%!important;
 }
+
+.text-small { font-size: 80%!important;}
 
 body {
     background-color: rgb(240,240,240);

@@ -18,7 +18,6 @@
   <link href="css/tools-status.css" rel="stylesheet">
   <link href="css/app.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
-  <link href="css/draganddrop.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet" />
 
 
@@ -36,17 +35,17 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading py-2">
         Tools
-        <button class="btn btn-sm btn-light pull-right" id="sidebar-toggle"><i class="fa fa-eye-slash"></i> Hide</button>
+        <button class="btn btn-sm btn-light pull-right text-smaller" id="sidebar-toggle"><i class="fa fa-eye-slash"></i> Hide</button>
       </div>
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">Source Control Management</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light py-1"><small>Source Control Management</small></a>
           
-        <a href="#" class="list-group-item list-group-item-action bg-light">Continuous Integration</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Static Code Analysis</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Repository Manager</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Monitoring</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Data Visualization</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Other Tools</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><small>Continuous Integration</small></a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><small>Static Code Analysis</small></a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><small>Repository Manager</small></a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><small>Monitoring</small></a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><small>Data Visualization</small></a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><small>Other Tools</small></a>
         <!-- <div class="holder"></div> -->
       </div>
     </div>
@@ -67,7 +66,7 @@
           <div class="container jumbotron-title-container py-0">
             <!-- <h1 class="display-4">Title Here</h1> -->
             <h1 class="py-0">Dashboard</h1>
-            <p class="lead py-0">Subtitle here</p>
+            <p class="lead py-0">This is the mockup site, newer code in develop or feature branches</p>
           </div>
         </div>
         <!-- /#header-jumbotron-wrapper -->
@@ -234,7 +233,7 @@
                 <div class="col-md-12 px-0">
                   <div class="card px-3 py-2 my-3">
                     <div class="form-group">
-                        <label for="containerLogs">Ansible Logs</label>
+                        <label class="text-small" for="containerLogs">Ansible Logs</label>
                         <textarea class="form-control bg-dark monospace text-white text-smaller overflow-textarea" id="ansibleLogs" rows="10" readonly></textarea>
                     </div>
                   </div>
@@ -253,7 +252,7 @@
                       </textarea>
                     </div>
                     <div class="form-group">
-                      <label for="containerLogs">Containers Logs</label>
+                      <label class="text-small" for="containerLogs">Containers Logs</label>
                       <textarea class="form-control bg-dark monospace text-white text-smaller overflow-textarea" id="containerLogs" rows="10" readonly></textarea>
                     </div>
                   </div>
@@ -264,51 +263,6 @@
         </div>
         <!-- /#main-panels-wrapper -->
       </div>
-    
-      <div class="ui-widget ui-helper-clearfix">
-
-        <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
-          <li class="ui-widget-content ui-corner-tr">
-            <h5 class="ui-widget-header">High Tatras</h5>
-            <img src="images/high_tatras_min.jpg" alt="The peaks of High Tatras" width="96" height="72">
-            <a href="images/high_tatras.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-            <a href="link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
-          </li>
-          <li class="ui-widget-content ui-corner-tr">
-            <h5 class="ui-widget-header">High Tatras 2</h5>
-            <img src="images/high_tatras2_min.jpg" alt="The chalet at the Green mountain lake" width="96" height="72">
-            <a href="images/high_tatras2.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-            <a href="link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
-          </li>
-          <li class="ui-widget-content ui-corner-tr">
-            <p>GitLab</p>
-            <a href="images/high_tatras3.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-            <a href="link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
-          </li>
-          <li class="ui-widget-content ui-corner-tr">
-            <h5 class="ui-widget-header">High Tatras 4</h5>
-            <img src="images/high_tatras4_min.jpg" alt="On top of Kozi kopka" width="96" height="72">
-            <a href="images/high_tatras4.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-            <a href="link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
-          </li>
-          <li class="ui-widget-content ui-corner-tr">
-            <h5 class="ui-widget-header">High Tatras 4</h5>
-            <img src="images/high_tatras4_min.jpg" alt="On top of Kozi kopka" width="96" height="72">
-            <a href="images/high_tatras4.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>
-            <a href="link/to/trash/script/when/we/have/js/off" title="Delete this image" class="ui-icon ui-icon-trash">Delete image</a>
-          </li>
-        </ul>
-  
-        <div id="trash" class="ui-widget-content ui-state-default">
-          <h4 class="ui-widget-header"><span class="ui-icon ui-icon-trash">Trash</span> Trash</h4>
-        </div>
-
-        <div id="trash" class="ui-widget-content ui-state-default">
-            <h4 class="ui-widget-header"><span class="ui-icon ui-icon-trash">Trash</span> Trash</h4>
-          </div>
- 
-      </div>
-
     </div>
 
     <!-- /#page-content-wrapper -->
@@ -323,10 +277,6 @@
   <!-- Third Party Scripts -->
   <!-- Minimal Scroll Bars, use by adding data-simplebar inside an element with overflow -->
   <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>
-  <!-- jQueryUI for Drag and Drop -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <!-- Drag and Drop JS from jQueryUI -->
-  <script src="js/draganddrop.js"></script>
   
 
   <!-- Menu Toggle Script -->
