@@ -1,0 +1,86 @@
+/* FontAwesome for working BootSnippet :> */
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
+
+.container{
+    padding-top: 50px;
+}
+
+#messagebox{
+    border: solid 0px #cecece;
+    min-height: 100px;
+    color: #4B515D;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.05);
+    border-radius: 5px;
+    background-color: white;
+}
+
+#messagebox.success{
+    border: solid 0px #00C851;
+    border-left: solid 8px #00C851;
+}
+
+#messagebox.fail{
+    border: solid 0px #ff4444;
+    border-left: solid 8px #ff4444;
+}
+
+#messagebox.warning {
+    border: solid 0px #ffbb33;
+    border-left: solid 8px #ffbb33;
+}
+
+#messagebox-icon{
+    padding: 1em;
+}
+
+#messagebox-detail-link{
+    margin-left: 1em;
+    margin-right: 1em;
+    position: relative;
+    right: 0;
+}
+
+#messagebox-header{
+    margin-left: 1%!important;
+    margin-right: 1%!important;
+    margin-bottom: 0px;
+    min-height: 61px!important;
+    border-top: solid 1px lightgray;
+
+}
+
+#expanded-status{
+    border: solid 1px black;
+}
+
+.jumbotron {
+    max-height: 100%!important;
+    padding: 1rem 2rem!important;
+}
+
+.row-padding-15 {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+
+.row-padding-left-15 {
+    padding-left: 15px!important;
+}
+
+.row-app-icon-container {
+    
+    height: 40px;
+}
+
+.row-app-icon {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.process-status-app-icon {
+    height: 80%;
+}
