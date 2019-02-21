@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DevOps Dashboard';
-  navbarDescription = 'DevOps Platform'
+  navbarTitle = 'DevOps Platform'
   public shouldShow = true;
   public editButton: string = 'Edit';
   public changeText(): void {
