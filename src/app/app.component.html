@@ -9,6 +9,18 @@
   <link href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" rel="stylesheet">
 </head>
 <body>
+  <!-- Header/Jumbotron -->
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark">
+      <span class="navbar-brand mb-0 h1 py-0">Dashboard</span> <button class="btn btn-sm btn-secondary py-0" id="menu-toggle" (click)="shouldShow = !shouldShow; changeText()" [ngClass]="{'btn-secondary': shouldShow, 'btn-success': !shouldShow}"><i class="fa" [ngClass]="{'fa-cog': shouldShow, '': !shouldShow}"></i> {{editButton}}</button>
+    </nav>
+  <div class="jumbotron jumbotron-fluid tinted-image my-0">
+      <div class="container jumbotron-title-container py-0">
+        <!-- <h1 class="display-4">Title Here</h1> -->
+        <h1 class="py-0">Dashboard</h1>
+        <p class="lead py-0">This is the mockup site, newer code in develop or feature branches</p>
+      </div>
+    </div><!-- /#header-jumbotron-wrapper -->
   <div class="d-flex" id="wrapper" [ngClass]="{'toggled': shouldShow, '': !shouldShow}">
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
@@ -22,22 +34,10 @@
     </div><!-- /#sidebar-wrapper -->
     <!-- Page Content -->
     <div id="page-content-wrapper">
-      <!-- Navbar -->
-      <nav class="navbar navbar-dark bg-dark">
-        <span class="navbar-brand mb-0 h1 py-0">Dashboard</span> <button class="btn btn-sm btn-secondary py-0" id="menu-toggle" (click)="shouldShow = !shouldShow"><i class="fa fa-cog"></i> Edit</button>
-      </nav>
       <div class="container-fluid" style="padding: 0!important">
-        <!-- Header/Jumbotron -->
-        <div class="jumbotron jumbotron-fluid tinted-image">
-          <div class="container jumbotron-title-container py-0">
-            <!-- <h1 class="display-4">Title Here</h1> -->
-            <h1 class="py-0">Dashboard</h1>
-            <p class="lead py-0">This is the mockup site, newer code in develop or feature branches</p>
-          </div>
-        </div><!-- /#header-jumbotron-wrapper -->
         <!-- Main Panels -->
         <div class="container-fluid">
-          <div class="row">
+          <div class="row my-4">
             <div class="col-lg-7">
               <!-- Process Status Row-->
               <div class="row row-padding-15">
