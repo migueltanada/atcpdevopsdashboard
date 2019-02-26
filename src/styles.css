@@ -13,7 +13,7 @@
     border: solid 0px #cecece;
     min-height: 100px;
     color: #4B515D;
-    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+    /* box-shadow: 0px 3px 10px rgba(0,0,0,0.1); */
     border-radius: 5px;
     background-color: white;
 }
@@ -31,6 +31,17 @@
 #messagebox.warning {
     border: solid 0px #ffbb33;
     border-left: solid 8px #ffbb33;
+}
+
+#messagebox.inactive{
+    border: solid 0px #f8f9fa;
+    border-left: solid 8px #f8f9fa;
+}
+
+
+.inactive{
+    border: solid 0px #f8f9fa;
+    border-left: solid 8px #f8f9fa;
 }
 
 #messagebox-icon{
@@ -88,3 +99,9 @@
 .process-status-app-icon {
     height: 80%;
 }
+
+#messagebox > .btn-group {
+    border: solid red 1px!important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

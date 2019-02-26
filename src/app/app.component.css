@@ -9,11 +9,12 @@
 .tinted-image {
   /* background: url(../images/Ambient_Pattern_2_Technology_RGB.png) center center no-repeat,
   linear-gradient(60deg, rgba(0,140,13,1) 0%, rgba(0,250,4,1) 100%); */
-  background: linear-gradient(60deg, rgba(0,130,13,1) 0%, rgba(0,250,4,1) 100%);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#007bff+1,6100ff+100 */
+  background: linear-gradient(60deg, rgba(0,123,255,1) 0%, rgba(97,0,255,1) 100%);
   background-size: 120%;
 }
 
-
+f
 .overflow-textarea {
   /* max-width: 100%;
   max-height: 100%; */
@@ -144,4 +145,32 @@ body {
 
 .navbar-brand {
   color: white!important;
+}
+
+/** Drag and Drop **/
+
+.sidebar-item {
+  font-size: 15px;
+  font-weight: bold;
+  /* box-shadow: 0px 3px 10px rgba(0,0,0,0.1); */
+  display: inline-block;
+  border-radius: 5px;
+  color: grey;
+}
+
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  /* Animate an item that has been dropped. */
+  .cdk-drag-animating {
+  transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+.sidebar-icon {
+  max-width: 20%;
+  height: auto;
+}
+
+.drop-area-sidebar {
+  min-height: 50px!important;
 }

@@ -12,7 +12,7 @@
   <!-- Header/Jumbotron -->
   <!-- Navbar -->
   <nav class="navbar navbar-dark bg-dark">
-      <span class="navbar-brand mb-0 h1 py-0">{{navbarTitle}}</span> <button class="btn btn-sm btn-secondary py-0" id="menu-toggle" (click)="shouldShow = !shouldShow; changeText()" [ngClass]="{'btn-secondary': shouldShow, 'btn-success': !shouldShow}"><i class="fa" [ngClass]="{'fa-cog': shouldShow, '': !shouldShow}"></i> {{editButton}}</button>
+      <span class="navbar-brand mb-0 h1 py-0">{{navbarTitle}}</span> <button class="btn btn-sm btn-secondary py-0" id="menu-toggle" (click)="shouldShow = !shouldShow; changeText()" [ngClass]="{'btn-secondary': shouldShow, 'btn-warning': !shouldShow}"><i class="fa" [ngClass]="{'fa-cog': shouldShow, '': !shouldShow}"></i> {{editButton}}</button>
     </nav>
   <div class="jumbotron jumbotron-fluid tinted-image my-0">
       <div class="container jumbotron-title-container py-0">
@@ -26,12 +26,35 @@
     <div class="bg-light" id="sidebar-wrapper">
       <div class="sidebar-heading py-2">
         Tools
-        <!-- <button class="btn btn-sm btn-outline-success pull-right text-smaller" id="sidebar-toggle" (click)="shouldShow = !shouldShow; changeText()">Save and Close</button> -->
       </div>
       <div class="list-group list-group-flush">
-        <a class="list-group-item list-group-item-action bg-light py-1" href="#"><small>Source Control Management</small></a> <a class="list-group-item list-group-item-action bg-light" href="#"><small>Continuous Integration</small></a> <a class="list-group-item list-group-item-action bg-light" href="#"><small>Static Code Analysis</small></a> <a class="list-group-item list-group-item-action bg-light" href="#"><small>Repository Manager</small></a> <a class="list-group-item list-group-item-action bg-light" href="#"><small>Monitoring</small></a> <a class="list-group-item list-group-item-action bg-light" href="#"><small>Data Visualization</small></a> <a class="list-group-item list-group-item-action bg-light" href="#"><small>Other Tools</small></a> <!-- <div class="holder"></div> -->
+        <!-- <a class="list-group-item list-group-item-action bg-light py-1" href="#"><small>Source Control Management</small></a> -->
+        <a class="list-group-item list-group-item-action bg-light py-1" href="#"><small>All Tools</small></a>        <div class="m-2">
+          <!-- Sorting -->
+          <div cdkDropList (cdkDropListDropped)="drop($event)">
+            <!-- Draggable -->
+            <div
+            cdkDropList
+            #sidebar="cdkDropList"
+            [cdkDropListData]="tools"
+            [cdkDropListConnectedTo]="[selection]"
+            class="drop-area-sidebar"
+            (cdkDropListDropped)="drop($event)">
+              <div *ngFor="let tool of tools" class="bg-white sidebar-item inactive p-3 m-1" cdkDrag>
+                {{tool.name}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <a class="list-group-item list-group-item-action bg-light" href="#"><small>Static Code Analysis</small></a>
+        <a class="list-group-item list-group-item-action bg-light" href="#"><small>Repository Manager</small></a>
+        <a class="list-group-item list-group-item-action bg-light" href="#"><small>Monitoring</small></a>
+        <a class="list-group-item list-group-item-action bg-light" href="#"><small>Data Visualization</small></a>
+        <a class="list-group-item list-group-item-action bg-light" href="#"><small>Other Tools</small></a> -->
       </div>
-    </div><!-- /#sidebar-wrapper -->
+    </div>
+    <!-- /#sidebar-wrapper -->
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <div class="container-fluid" style="padding: 0!important">
@@ -39,6 +62,21 @@
         <div class="container-fluid">
           <div class="row my-4">
             <div class="col-lg-7">
+              <div
+              cdkDropList
+              #selection="cdkDropList"
+              [cdkDropListData]="altTools"
+              [cdkDropListConnectedTo]="[sidebar]"
+              class="drop-area-selection"
+              (cdkDropListDropped)="drop($event)">
+                <!-- Process Status Row-->
+                <div class="row row-padding-15">
+                  <div *ngFor="let altTool of altTools" class="col-sm-4 bg-white sidebar-item inactive mx-1" cdkDrag>
+                    {{altTool.name}}
+                    <img alt="Responsive image" class="sidebar-icon" src="{{altTool.logoUrl}}">
+                  </div>
+                </div>
+              </div>
               <!-- Process Status Row-->
               <div class="row row-padding-15">
                 <!-- Process Box -->
@@ -50,7 +88,7 @@
                           <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="../assets/img/gitlab.png"></div>
                         </div>
                         <div class="row h6 p-2" id="messagebox-header">
-                          <small>Git Repository Management and Code Review</small>
+                          <small>Git Repo Management and Code Review</small>
                         </div>
                         <div class="row p-2">
                           <div aria-label="Basic example" class="btn-group mx-auto" role="group">
@@ -110,14 +148,14 @@
               <div class="row row-padding-15">
                 <!-- Process Box -->
                 <div class="col-sm-4">
-                  <div class="success" id="messagebox">
+                  <div class="fail" id="messagebox">
                     <div class="row">
                       <div class="col-md-12">
                         <div class="row row-app-icon-container">
-                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="../assets/img/gitlab.png"></div>
+                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="../assets/img/nexus.png"></div>
                         </div>
                         <div class="row h6 p-2" id="messagebox-header">
-                          <small>Git Repository Management and Code Review</small>
+                          <small>Software Repository Manager</small>
                         </div>
                         <div class="row p-2 text-black-50 row-padding-left-15">
                           <div aria-label="Basic example" class="btn-group mx-auto" role="group">
@@ -133,10 +171,10 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="row row-app-icon-container">
-                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="../assets/img/jenkins.png"></div>
+                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="../assets/img/sensu.png"></div>
                         </div>
                         <div class="row h6 p-2" id="messagebox-header">
-                          <small>Continuous Integration and Automation Server</small>
+                          <small>Monitoring</small>
                         </div>
                         <div class="row p-2 text-black-50 row-padding-left-15">
                           <div aria-label="Basic example" class="btn-group mx-auto" role="group">
@@ -148,7 +186,7 @@
                   </div>
                 </div><!-- Process Box -->
                 <div class="col-sm-4">
-                  <div class="success" id="messagebox">
+                  <div class="inactive" id="messagebox">
                     <div class="row">
                       <div class="col-md-12">
                         <div class="row row-app-icon-container">
@@ -167,14 +205,14 @@
                     </div>
                   </div>
                 </div>
-              </div><!-- Toolbar Row -->
+              </div>
               <div class="row row-padding-15 pull-right">
                 <!-- Toolbar -->
                 <button class="btn btn-primary btn-success" id="start_setup" type="button">Start</button>
               </div><br>
               <br>
               <br>
-              <!-- Ansible Logs Row -->
+              <!-- Ansible Logs -->
               <div class="col-md-12 px-0">
                 <div class="card px-3 py-2 my-3">
                   <div class="form-group">
