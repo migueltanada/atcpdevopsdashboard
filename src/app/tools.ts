@@ -3,6 +3,7 @@ export class Tool {
   name: string;
   description: string;
   logoUrl: string;
+  status: string
 }
 
 export class altTool {
@@ -10,4 +11,9 @@ export class altTool {
   name: string;
   description: string;
   logoUrl: string;
+  status: string
+}
+
+export class fields {
+
 }

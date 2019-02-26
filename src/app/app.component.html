@@ -18,7 +18,7 @@
       <div class="container jumbotron-title-container py-0">
         <!-- <h1 class="display-4">Title Here</h1> -->
         <h1 class="py-0">{{title}}</h1>
-        <p class="lead py-0">This is the mockup site, newer code in develop or feature branches</p>
+        <p class="lead py-0">{{description}}</p>
       </div>
     </div><!-- /#header-jumbotron-wrapper -->
   <div class="d-flex" id="wrapper" [ngClass]="{'toggled': shouldShow, '': !shouldShow}">
@@ -32,7 +32,7 @@
         <a class="list-group-item list-group-item-action bg-light py-1" href="#"><small>All Tools</small></a>        <div class="m-2">
           <!-- Sorting -->
           <div cdkDropList (cdkDropListDropped)="drop($event)">
-            <!-- Draggable -->
+            <!-- Draggable, Drop / Selection Area -->
             <div
             cdkDropList
             #sidebar="cdkDropList"
@@ -40,13 +40,15 @@
             [cdkDropListConnectedTo]="[selection]"
             class="drop-area-sidebar"
             (cdkDropListDropped)="drop($event)">
-              <div *ngFor="let tool of tools" class="bg-white sidebar-item inactive p-3 m-1" cdkDrag>
-                {{tool.name}}
+              <div class="row m-2">
+                <div *ngFor="let tool of tools" class="col-sm-5 bg-white sidebar-item m-2" cdkDrag>
+                  <img alt="Responsive image" class="sidebar-icon" src="{{tool.logoUrl}}">
+                  <div *cdkDragPlaceholder class="col-md-4 selection-item-preview mx-2"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
         <!-- <a class="list-group-item list-group-item-action bg-light" href="#"><small>Static Code Analysis</small></a>
         <a class="list-group-item list-group-item-action bg-light" href="#"><small>Repository Manager</small></a>
         <a class="list-group-item list-group-item-action bg-light" href="#"><small>Monitoring</small></a>
@@ -62,6 +64,7 @@
         <div class="container-fluid">
           <div class="row my-4">
             <div class="col-lg-7">
+              <div class="alert alert-info" role="alert">{{dragHelp}}</div>
               <div
               cdkDropList
               #selection="cdkDropList"
@@ -69,146 +72,32 @@
               [cdkDropListConnectedTo]="[sidebar]"
               class="drop-area-selection"
               (cdkDropListDropped)="drop($event)">
-                <!-- Process Status Row-->
-                <div class="row row-padding-15">
-                  <div *ngFor="let altTool of altTools" class="col-sm-4 bg-white sidebar-item inactive mx-1" cdkDrag>
-                    {{altTool.name}}
-                    <img alt="Responsive image" class="sidebar-icon" src="{{altTool.logoUrl}}">
-                  </div>
-                </div>
-              </div>
-              <!-- Process Status Row-->
-              <div class="row row-padding-15">
-                <!-- Process Box -->
-                <div class="col-sm-4">
-                  <div class="success" id="messagebox">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="row row-app-icon-container">
-                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="../assets/img/gitlab.png"></div>
-                        </div>
-                        <div class="row h6 p-2" id="messagebox-header">
-                          <small>Git Repo Management and Code Review</small>
-                        </div>
-                        <div class="row p-2">
-                          <div aria-label="Basic example" class="btn-group mx-auto" role="group">
-                            <button class="btn btn-light btn-sm" type="button">Start</button> <button class="btn btn-light btn-sm" type="button">Stop</button> <button class="btn btn-light btn-sm" type="button">Logs</button>
-                          </div><!-- <div class="btn-group mx-auto" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-light btn-sm"><i class="fa fa-play"></i></button>
-                                <button type="button" class="btn btn-light btn-sm"><i class="fa fa-stop"></i></button>
-                                <button type="button" class="btn btn-light btn-sm"><i class="fa fa-list"></i></button>
-                              </div> -->
-                        </div>
+                <!-- Process Status Row / Drop Area / Selection Area -->
+                <div class="row row-padding-15 selection-area">
+                  <div *ngFor="let altTool of altTools" class="col-sm-4" cdkDrag>
+                    <div class="row px-2 py-2">
+                      <div class="col-md-12 bg-white selection-item {{altTool.status}}">
+                          <div class="row py-2">
+                            <img alt="Responsive image" class="selection-icon" src="{{altTool.logoUrl}}">
+                          </div>
+                          <div class="row selection-description p-2">
+                            <small>{{altTool.description}}</small>
+                            <div id="selectedTool" style="display: none">{{altTool.name}}</div>
+                          </div>
+                          <div class="row p-2">
+                            <div aria-label="Basic example" class="btn-group mx-auto" role="group">
+                              <button class="btn btn-light btn-sm" type="button" id="start-button">Start</button> <button class="btn btn-light btn-sm" type="button">Stop</button> <button class="btn btn-light btn-sm" type="button">Logs</button>
+                            </div>
+                          </div>
                       </div>
                     </div>
-                  </div>
-                </div><!-- Process Box -->
-                <div class="col-sm-4">
-                  <div class="success" id="messagebox">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="row row-app-icon-container">
-                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="../assets/img/jenkins.png"></div>
-                        </div>
-                        <div class="row h6 p-2" id="messagebox-header">
-                          <small>CI and Automation Server</small>
-                        </div>
-                        <div class="row p-2">
-                          <div aria-label="Basic example" class="btn-group mx-auto" role="group">
-                            <button class="btn btn-light btn-sm" type="button">Start</button> <button class="btn btn-light btn-sm" type="button">Stop</button> <button class="btn btn-light btn-sm" type="button">Logs</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- Process Box -->
-                <div class="col-sm-4 container2">
-                  <div class="" id="messagebox">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="row row-app-icon-container">
-                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="../assets/img/sonar.png"></div>
-                        </div>
-                        <form class="px-3" id="tool-params" name="tool-params" data-simplebar>
-                          <div class="form-group">
-                            <label for="sonar_jdbc_username"><small>JDBC Username</small></label> <input aria-describedby="" class="form-control form-control-sm" id="sonar_jdbc_username" placeholder="sonar" type="email">
-                          </div>
-                          <div class="form-group">
-                            <label for="sonar_jdbc_password"><small>JDBC Password</small></label> <input aria-describedby="" class="form-control form-control-sm" id="sonar_jdbc_password" placeholder="" type="password" value="sonar">
-                          </div>
-                          <div class="form-group">
-                            <label for="mysql_root_password"><small>MySQL Root Password</small></label> <input aria-describedby="" class="form-control form-control-sm" id="mysql_root_password" placeholder="" type="password" value="sonar">
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- Process Status Row-->
-              <div class="row row-padding-15">
-                <!-- Process Box -->
-                <div class="col-sm-4">
-                  <div class="fail" id="messagebox">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="row row-app-icon-container">
-                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="../assets/img/nexus.png"></div>
-                        </div>
-                        <div class="row h6 p-2" id="messagebox-header">
-                          <small>Software Repository Manager</small>
-                        </div>
-                        <div class="row p-2 text-black-50 row-padding-left-15">
-                          <div aria-label="Basic example" class="btn-group mx-auto" role="group">
-                            <button class="btn btn-light btn-sm" type="button">Start</button> <button class="btn btn-light btn-sm" type="button">Stop</button> <button class="btn btn-light btn-sm" type="button">Logs</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- Process Box -->
-                <div class="col-sm-4">
-                  <div class="warning" id="messagebox">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="row row-app-icon-container">
-                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="../assets/img/sensu.png"></div>
-                        </div>
-                        <div class="row h6 p-2" id="messagebox-header">
-                          <small>Monitoring</small>
-                        </div>
-                        <div class="row p-2 text-black-50 row-padding-left-15">
-                          <div aria-label="Basic example" class="btn-group mx-auto" role="group">
-                            <button class="btn btn-light btn-sm" type="button">Start</button> <button class="btn btn-light btn-sm" type="button">Stop</button> <button class="btn btn-light btn-sm" type="button">Logs</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- Process Box -->
-                <div class="col-sm-4">
-                  <div class="inactive" id="messagebox">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="row row-app-icon-container">
-                          <div class="row-app-icon"><img alt="Responsive image" class="process-status-app-icon" src="../assets/img/sonar.png"></div>
-                        </div>
-                        <div class="row h6 p-2" id="messagebox-header">
-                          <small>Static Code Analysis<br>
-                          <br></small>
-                        </div>
-                        <div class="row p-2 text-black-50 row-padding-left-15">
-                          <div aria-label="Basic example" class="btn-group mx-auto" role="group">
-                            <button class="btn btn-light btn-sm" type="button">Start</button> <button class="btn btn-light btn-sm" type="button">Stop</button> <button class="btn btn-light btn-sm" type="button">Logs</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <div *cdkDragPlaceholder class="col-md-5 sidebar-item-preview"></div>
                   </div>
                 </div>
               </div>
               <div class="row row-padding-15 pull-right">
                 <!-- Toolbar -->
-                <button class="btn btn-primary btn-success" id="start_setup" type="button">Start</button>
+                <button class="btn btn-primary btn-success" id="start_setup" type="button" (click)="generateJSON()">Start</button>
               </div><br>
               <br>
               <br>
@@ -250,6 +139,6 @@
   <!-- Third Party Scripts -->
   <!-- Minimal Scroll Bars, use by adding data-simplebar inside an element with overflow -->
   <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js">
-  </script> 
+  </script>
 </body>
 </html>
